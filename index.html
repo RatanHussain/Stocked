@@ -1,0 +1,78 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="container">
+			<h2>Stock Management</h2>
+			<form
+				action="https://sheetdb.io/api/v1/7caghcl72n0rw"
+				method="post"
+				id="sheetdb-form">
+				<div class="all status">
+					<label for="status">Movement</label>
+					<select name="data[Status]" id="status">
+						<option value="Returned Items">Returned Items</option>
+						<option value="Update for add stock">Update for add stock</option>
+					</select>
+				</div>
+				<div class="all store">
+					<label for="store">Store</label>
+					<select name="data[Store]" id="store">
+						<option value="Sales Depmartment">Sales Depmartment</option>
+						<option value="Mr.Basser Stock">Mr.Basser Stock</option>
+					</select>
+				</div>
+				<div class="all items">
+					<label for="items">Items</label>
+					<select name="data[Items]" id="items">
+						<option value="Rashof103">Rashof103</option>
+						<option value="Lavender">Lavender</option>
+						<option value="Argania">Argania</option>
+						<option value="Propolis">Propolis</option>
+						<option value="BlackSeed">BlackSeed</option>
+						<option value="Be-Pollen">Be-Pollen</option>
+						<option value="RoyalGelly">RoyalGelly</option>
+						<option value="Lafayette">Lafayette</option>
+					</select>
+				</div>
+				<div class="all quantity">
+					<label for="quantity">Quantity</label>
+					<input
+						type="number"
+						name="data[Quantity]"
+						id="quantity"
+						placeholder="Enter Quantity here"
+						required />
+				</div>
+
+				<div class="btn">
+					<input type="submit" value="Sales" />
+					<input type="submit" value="Added" />
+				</div>
+			</form>
+			<p>Ratan Hussain</p>
+		</div>
+		<script>
+			var form = document.getElementById('sheetdb-form');
+			form.addEventListener('submit', (e) => {
+				e.preventDefault();
+				fetch(form.action, {
+					method: 'POST',
+					body: new FormData(document.getElementById('sheetdb-form')),
+				})
+					.then((response) => response.json())
+					.then((html) => {
+						// you can put any JS code here
+						location.reload();
+					});
+			});
+		</script>
+	</body>
+</html>
