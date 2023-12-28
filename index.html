@@ -10,7 +10,7 @@
 		<title>Document</title>
 	</head>
 	<body>
-		<div class="container">
+		<div class="container" id="container">
 			<h2>Stock Management</h2>
 			<form
 				action="https://sheetdb.io/api/v1/bpbi5lv5e3sr3"
@@ -83,7 +83,9 @@
 			<i class="fa-solid fa-circle-xmark closeIcon" id="closeBtn"></i>
 			<table class="table">
 				<tr>
-					<td rowspan="3" ><input type="text" name=""  id="display"></td>
+					<td colspan="5" ><input type="text" name=""  id="display"></td>
+				</tr>
+				<tr>
 					<td><input onclick="display.value = display.value + this.value" type="button" name="" value="7" id=""></td>
 					<td><input onclick="display.value = display.value + this.value" type="button" name="" value="8" id=""></td>
 					<td><input onclick="display.value = display.value + this.value" type="button" name="" value="9" id=""></td>
@@ -114,15 +116,19 @@
 			let calcuId = document.querySelector('#calcuId')
 			let closeBtn = document.querySelector('#closeBtn')
 			let calculator = document.querySelector('#calculator')
+			let container = document.querySelector('#container')
+
 
 			calcuId.addEventListener('click', ()=>{
 				calculator.style.display = 'block';
 				calcuId.style.display = 'none'
+				container.style.marginTop = '10px'
 			})
 
 			closeBtn.addEventListener('click', ()=>{
 				calculator.style.display = 'none'
 				calcuId.style.display = 'block'
+				container.style.marginTop = '100px'
 			})
 
 			window.addEventListener('load', () => {
