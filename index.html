@@ -109,6 +109,9 @@
 				</tr>
 			</table>
 		</div>
+		<div id="sendUp">
+
+		</div>
 
 		<script>
 			var form = document.getElementById('sheetdb-form');
@@ -117,18 +120,30 @@
 			let closeBtn = document.querySelector('#closeBtn')
 			let calculator = document.querySelector('#calculator')
 			let container = document.querySelector('#container')
+			let sendUp = document.querySelector('#sendUp')
+			let display = document.querySelector('#display')
+			let quantity = document.querySelector('#quantity')
+
+
+			sendUp.addEventListener('click', ()=>{
+			     quantity.value =	display.value
+			})
+
+
 
 
 			calcuId.addEventListener('click', ()=>{
 				calculator.style.display = 'block';
 				calcuId.style.display = 'none'
 				container.style.marginTop = '10px'
+				sendUp.style.display = 'block'
 			})
 
 			closeBtn.addEventListener('click', ()=>{
 				calculator.style.display = 'none'
 				calcuId.style.display = 'block'
 				container.style.marginTop = '100px'
+				sendUp.style.display = 'none'
 			})
 
 			window.addEventListener('load', () => {
