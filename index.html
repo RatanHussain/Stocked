@@ -6,6 +6,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="style.css" />
+		<script src="https://kit.fontawesome.com/f0be14b3ea.js" crossorigin="anonymous"></script>
 		<title>Document</title>
 	</head>
 	<body>
@@ -56,7 +57,7 @@
 						placeholder="Enter Quantity here"
 						required />
 				</div>
-				<div style="display: none " class="all quantity">
+				<div style="display: none" class="all quantity">
 					<label for="quantity">Date</label>
 					<input
 						type="text"
@@ -73,9 +74,56 @@
 			<p>Ratan Hussain</p>
 		</div>
 
+
+		<div class="calSec">
+			<i class="fa-solid fa-calculator calcu" id="calcuId"></i>
+		</div>
+
+		<div class="calculator" id="calculator">
+			<i class="fa-solid fa-circle-xmark closeIcon" id="closeBtn"></i>
+			<table class="table">
+				<tr>
+					<td rowspan="3" ><input type="text" name=""  id="display"></td>
+					<td><input onclick="display.value = display.value + this.value" type="button" name="" value="7" id=""></td>
+					<td><input onclick="display.value = display.value + this.value" type="button" name="" value="8" id=""></td>
+					<td><input onclick="display.value = display.value + this.value" type="button" name="" value="9" id=""></td>
+					<td><input onclick="display.value = display.value + this.value" type="button" name="" value="%" id=""></td>
+					<td><input onclick="display.value = '' " type="button" name="" value="C" id=""></td>
+				</tr>
+				<tr>
+					<td><input onclick="display.value = display.value + this.value" type="button" name="" value="4" id=""></td>
+					<td><input onclick="display.value = display.value + this.value" type="button" name="" value="5" id=""></td>
+					<td><input onclick="display.value = display.value + this.value" type="button" name="" value="6" id=""></td>
+					<td><input onclick="display.value = display.value + this.value" type="button" name="" value="*" id=""></td>
+					<td><input onclick="display.value = display.value + this.value" type="button" name="" value="+" id=""></td>
+				</tr>
+				<tr>
+					<td><input onclick="display.value = display.value + this.value" type="button" name="" value="1" id=""></td>
+					<td><input onclick="display.value = display.value + this.value" type="button" name="" value="2" id=""></td>
+					<td><input onclick="display.value = display.value + this.value" type="button" name="" value="3" id=""></td>
+					<td><input onclick="display.value = display.value + this.value" type="button" name="" value="0" id=""></td>
+					<td><input onclick="display.value = eval(display.value)" type="button" name="" value="=" id=""></td>
+
+				</tr>
+			</table>
+		</div>
+
 		<script>
 			var form = document.getElementById('sheetdb-form');
 			var currentDate = document.querySelector('#currentDate');
+			let calcuId = document.querySelector('#calcuId')
+			let closeBtn = document.querySelector('#closeBtn')
+			let calculator = document.querySelector('#calculator')
+
+			calcuId.addEventListener('click', ()=>{
+				calculator.style.display = 'block';
+				calcuId.style.display = 'none'
+			})
+
+			closeBtn.addEventListener('click', ()=>{
+				calculator.style.display = 'none'
+				calcuId.style.display = 'block'
+			})
 
 			window.addEventListener('load', () => {
 				let newDate = new Date();

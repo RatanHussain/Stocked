@@ -14,13 +14,13 @@ body {
 	background-color: rgba(55, 38, 215, 0.31);
 	.container {
 		position: relative;
-		height: 450px;
+		height: 440px;
 		width: 90%;
 		/* padding: 20px ; */
 		margin: auto;
 		justify-content: center;
 		align-items: center;
-		margin-top: 150px;
+		margin-top: 10px;
 		background-color: rgba(0, 255, 255, 0.445);
 		/* background: transparent;
         backdrop-filter: blur(20px); */
@@ -74,7 +74,79 @@ body {
 			}
 		}
 	}
+
+	.calSec{
+		justify-content: center;
+		margin: auto;
+		display: block;
+		text-align: center;
+		/* display: none; */
+		margin: 50px ;
+		.calcu{
+			text-align: center;
+			font-size: 3rem;
+		}
+	}
+
+
+	.calculator{
+		display: none ;
+		position: relative;
+		margin: auto ;
+		height: 200px;
+		width: 90%;
+		background-color: rgb(0, 183, 255);
+		border-radius: 10px;
+		box-sizing: border-box;
+		padding:0 10px;
+		box-shadow: inset 5px 5px 10px #00000050  , inset -5px -5px 10px #00000050 ;
+		transition: all .5s;
+		margin-top: -40px;
+		.closeIcon{
+			position: absolute;
+			right: 0;
+			font-size: 1.5rem;
+			transform: translate(7px, -7px);
+		}
+		.table{
+			margin-left:  auto;
+			padding: 25px 0;
+			align-items: center;
+			& tr{
+				height: 10px;
+				& td{
+					font-size: 1rem;
+					& input[type="text"]{
+						width: 150px;
+						height: 80px;
+						border-radius: 10px;
+						position: absolute;
+						left: 10px;
+						top: 55px;
+						font-size: 2rem;
+						box-shadow: inset 5px 5px 10px #00000050  , inset -5px -5px 10px #00000050 ;
+						text-align: right;
+						box-sizing: border-box;
+						padding-right: 5px;
+					}
+					& input[type="button"]{
+						font-size: 2rem;
+						height: 50px;
+						border-radius: 50%;
+						width: 50px;
+						transition: all  .3s;
+						&:hover{
+							background-color: gold;
+							border: 3px solid #fff;
+						}
+					}
+				}
+			}
+		}
+	}
 }
+
+
 
 @media screen and (min-width: 768px) {
 	body .container {
