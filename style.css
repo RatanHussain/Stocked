@@ -107,11 +107,16 @@ body {
 				/* height: 10px; */
 				& td{
 					font-size: 1rem;
+					#equal{
+						width: 110px;
+						background-color: rgb(192, 238, 64);
+						color: black;
+					}
 					& input[type="button"]{
 						font-size: 2rem;
 						height: 50px;
 						border-radius: 10px;
-						width: 60px;
+						width: 55px;
 						box-shadow:  5px 5px 10px #00000020  ,  -5px -5px 10px #00000020 ;
 						transition: all  .3s;
 						&:hover{
