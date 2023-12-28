@@ -1,6 +1,6 @@
 <!-- @format -->
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -12,7 +12,7 @@
 		<div class="container">
 			<h2>Stock Management</h2>
 			<form
-				action="https://sheetdb.io/api/v1/7caghcl72n0rw"
+				action="https://sheetdb.io/api/v1/bpbi5lv5e3sr3"
 				method="post"
 				id="sheetdb-form">
 				<div class="all status">
@@ -32,18 +32,18 @@
 				<div class="all items">
 					<label for="items">Items</label>
 					<select name="data[Items]" id="items">
-						<option value="Rashof103">Rashof103</option>
+						<option value="Rashof103">Rashof</option>
 						<option value="Rashof104">Lavender</option>
-						<option value="RashofS106">RashofS106</option>
-						<option value="RashofN107">RashofN107</option>
-						<option value="RashofF108">RashofF108</option>
-						<option value="RoyalGelly101">RoyalGelly101</option>
-						<option value="Propolis101">Propolis101</option>
-						<option value="Pollen101">Pollen101</option>
-						<option value="BLACKSEED101">BLACKSEED101</option>
-						<option value="lafayett101">lafayett101</option>
-						<option value="PRFGREEN">PRFGREEN</option>
-						<option value="PRFLONDON">PRFLONDON</option>
+						<option value="RashofS106">Rashof Small</option>
+						<option value="RashofN107">Rashof Natural</option>
+						<option value="RashofF108">Rashof Flower</option>
+						<option value="RoyalGelly101">Royal Gelly</option>
+						<option value="Propolis101">Propolis</option>
+						<option value="Pollen101">Be-Pollen</option>
+						<option value="BLACKSEED101">Black Seed</option>
+						<option value="lafayett101">lafayette</option>
+						<option value="PRFGREEN">Perfume-Green</option>
+						<option value="PRFLONDON">Perfume-London</option>
 						<option value="Argania">Argania</option>
 					</select>
 				</div>
@@ -56,17 +56,14 @@
 						placeholder="Enter Quantity here"
 						required />
 				</div>
-				<div style="display:;" class="all quantity">
+				<div style="display: none " class="all quantity">
 					<label for="quantity">Date</label>
 					<input
-						type="number"
-						name="data[Date]"
+						type="text"
+						name="data[Date Time]"
 						id="currentDate"
-						placeholder="Enter Quantity here"
-						 />
+						placeholder="Enter Quantity here" />
 				</div>
-
-
 
 				<div class="btn">
 					<!-- <input type="submit" value="Sales" /> -->
@@ -76,23 +73,47 @@
 			<p>Ratan Hussain</p>
 		</div>
 
-
-
-
 		<script>
 			var form = document.getElementById('sheetdb-form');
-			var currentDate = document.querySelector('currentDate')
+			var currentDate = document.querySelector('#currentDate');
 
+			window.addEventListener('load', () => {
+				let newDate = new Date();
 
+				let dateText =
+					(newDate.getDate() < 10
+						? '0' + newDate.getDate()
+						: newDate.getDate()) +
+					'-' +
+					(newDate.getMonth() < 10
+						? '0' + (newDate.getMonth() + 1)
+						: newDate.getMonth() + 1) +
+					'-' +
+					newDate.getFullYear();
 
+				let DayNight = newDate.getHours() > 12 ? 'PM' : 'AM';
+
+				let hours =
+					newDate.getHours() > 12
+						? newDate.getHours() - 12
+						: newDate.getHours();
+
+				let timeText =
+					(hours < 10 ? '0' + hours : hours) +
+					':' +
+					(newDate.getMinutes() < 9
+						? '0' + newDate.getMinutes()
+						: newDate.getMinutes()) +
+					':' +
+					(newDate.getSeconds() < 10
+						? '0' + newDate.getSeconds()
+						: newDate.getSeconds());
+
+				currentDate.value = dateText + '   ' + timeText + ' ' + DayNight;
+			});
 
 			form.addEventListener('submit', (e) => {
 				e.preventDefault();
-				let newDate = new Date()
-
-				let dateText = newDate.getDay() + '-' + newDate.getMonth() + '-' + newDate.getFullYear() ;
-
-				currentDate.value = dateText;
 
 				fetch(form.action, {
 					method: 'POST',
