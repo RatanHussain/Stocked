@@ -1,6 +1,6 @@
 <!-- @format -->
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -33,13 +33,18 @@
 					<label for="items">Items</label>
 					<select name="data[Items]" id="items">
 						<option value="Rashof103">Rashof103</option>
-						<option value="Lavender">Lavender</option>
+						<option value="Rashof104">Lavender</option>
+						<option value="RashofS106">RashofS106</option>
+						<option value="RashofN107">RashofN107</option>
+						<option value="RashofF108">RashofF108</option>
+						<option value="RoyalGelly101">RoyalGelly101</option>
+						<option value="Propolis101">Propolis101</option>
+						<option value="Pollen101">Pollen101</option>
+						<option value="BLACKSEED101">BLACKSEED101</option>
+						<option value="lafayett101">lafayett101</option>
+						<option value="PRFGREEN">PRFGREEN</option>
+						<option value="PRFLONDON">PRFLONDON</option>
 						<option value="Argania">Argania</option>
-						<option value="Propolis">Propolis</option>
-						<option value="BlackSeed">BlackSeed</option>
-						<option value="Be-Pollen">Be-Pollen</option>
-						<option value="RoyalGelly">RoyalGelly</option>
-						<option value="Lafayette">Lafayette</option>
 					</select>
 				</div>
 				<div class="all quantity">
@@ -51,18 +56,44 @@
 						placeholder="Enter Quantity here"
 						required />
 				</div>
+				<div style="display:;" class="all quantity">
+					<label for="quantity">Date</label>
+					<input
+						type="number"
+						name="data[Date]"
+						id="currentDate"
+						placeholder="Enter Quantity here"
+						 />
+				</div>
+
+
 
 				<div class="btn">
-					<input type="submit" value="Sales" />
-					<input type="submit" value="Added" />
+					<!-- <input type="submit" value="Sales" /> -->
+					<input type="submit" value="Submit" />
 				</div>
 			</form>
 			<p>Ratan Hussain</p>
 		</div>
+
+
+
+
 		<script>
 			var form = document.getElementById('sheetdb-form');
+			var currentDate = document.querySelector('currentDate')
+
+
+
+
 			form.addEventListener('submit', (e) => {
 				e.preventDefault();
+				let newDate = new Date()
+
+				let dateText = newDate.getDay() + '-' + newDate.getMonth() + '-' + newDate.getFullYear() ;
+
+				currentDate.value = dateText;
+
 				fetch(form.action, {
 					method: 'POST',
 					body: new FormData(document.getElementById('sheetdb-form')),
