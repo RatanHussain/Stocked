@@ -29,9 +29,9 @@ body {
 		padding: 30px;
 		box-shadow: inset 5px 5px 10px #00000050  , inset -5px -5px 10px #00000050 ;
 		& p {
-			position: absolute;
-			right: 20px;
-			bottom: 7px;
+			margin: -15px auto;
+			padding: 0 auto;
+			text-align: end;
 		}
 		& h2 {
 			text-align: center;

@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="style.css" />
 		<script src="https://kit.fontawesome.com/f0be14b3ea.js" crossorigin="anonymous"></script>
-		<title>Document</title>
+		<title>Stoke-Movement</title>
 	</head>
 	<body>
 		<div class="container" id="container">
@@ -42,7 +42,7 @@
 						<option value="Propolis101">Propolis</option>
 						<option value="Pollen101">Be-Pollen</option>
 						<option value="BLACKSEED101">Black Seed</option>
-						<option value="lafayett101">lafayette</option>
+					    <option value="lafayett101">lafayette</option>
 						<option value="PRFGREEN">Perfume-Green</option>
 						<option value="PRFLONDON">Perfume-London</option>
 						<option value="Argania">Argania</option>
@@ -90,14 +90,14 @@
 							<td><input onclick="display.value = display.value + this.value" type="button" name="" value="1" id=""></td>
 							<td><input onclick="display.value = display.value + this.value" type="button" name="" value="2" id=""></td>
 							<td><input onclick="display.value = display.value + this.value" type="button" name="" value="3" id=""></td>
-							<td><input onclick="display.value = display.value + this.value" type="button" name="" value="+" id=""></td>
+							<td><input onclick="display.value = display.value + this.value" type="button" name="" value="-" id=""></td>
 							<td><input onclick="display.value = display.value + this.value" type="button" name="" value="%" id=""></td>
 
 						</tr>
 						<tr>
-							<td><input onclick="display.value = display.value + this.value" type="button" name="" value="0" id=""></td>
 							<td><input onclick="display.value = display.value + this.value" type="button" name="" value="." id=""></td>
-							<td><input onclick="display.value = display.value + this.value" type="button" name="" value="-" id=""></td>
+							<td><input onclick="display.value = display.value + this.value" type="button" name="" value="0" id=""></td>
+							<td><input onclick="display.value = display.value + this.value" type="button" name="" value="+" id=""></td>
 							<td colspan="2" ><input onclick="display.value = eval(display.value)" type="button" name="" id="equal" value="=" id=""></td>
 
 						</tr>
@@ -109,7 +109,7 @@
 					<input type="submit" value="Submit" />
 				</div>
 			</form>
-			<p>Ratan Hussain</p>
+			<p>Design by Ratan</p>
 		</div>
 
 		<script>
@@ -121,19 +121,6 @@
 			let container = document.querySelector('#container')
 			let display = document.querySelector('#display')
 			let quantity = document.querySelector('#quantity')
-
-
-			// calcuId.addEventListener('click', ()=>{
-			// 	calculator.style.display = 'block';
-			// 	calcuId.style.display = 'none'
-			// 	container.style.marginTop = '10px'
-			// })
-
-			// closeBtn.addEventListener('click', ()=>{
-			// 	calculator.style.display = 'none'
-			// 	calcuId.style.display = 'block'
-			// 	container.style.marginTop = '100px'
-			// })
 
 			window.addEventListener('load', () => {
 				let newDate = new Date();
