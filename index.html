@@ -1,12 +1,14 @@
 <!-- @format -->
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="style.css" />
-		<script src="https://kit.fontawesome.com/f0be14b3ea.js" crossorigin="anonymous"></script>
+		<script
+			src="https://kit.fontawesome.com/f0be14b3ea.js"
+			crossorigin="anonymous"></script>
 		<title>Stoke-Movement</title>
 	</head>
 	<body>
@@ -42,7 +44,7 @@
 						<option value="Propolis101">Propolis</option>
 						<option value="Pollen101">Be-Pollen</option>
 						<option value="BLACKSEED101">Black Seed</option>
-					    <option value="lafayett101">lafayette</option>
+						<option value="lafayett101">lafayette</option>
 						<option value="PRFGREEN">Perfume-Green</option>
 						<option value="PRFLONDON">Perfume-London</option>
 						<option value="Argania">Argania</option>
@@ -60,11 +62,19 @@
 				<div style="display: none" class="all quantity">
 					<label for="quantity">Date</label>
 					<input
-						type="text"
+						type="datetime"
 						name="data[Date Time]"
 						id="currentDate"
 						placeholder="Enter Quantity here" />
 				</div>
+				<!-- <div style="display: none" class="all quantity">
+					<label for="quantity">Date</label>
+					<input
+						type="text"
+						name="data[Date Time]"
+						id="currentTime"
+						placeholder="Enter Quantity here" />
+				</div> -->
 
 				<div class="calculator" id="calculator">
 					<!-- <i class="fa-solid fa-circle-xmark closeIcon" id="closeBtn"></i> -->
@@ -73,33 +83,165 @@
 							<td colspan="5" ><input type="text" name=""  id="display"></td>
 						</tr> -->
 						<tr>
-							<td><input onclick="display.value = display.value + this.value" type="button" name="" value="7" id=""></td>
-							<td><input onclick="display.value = display.value + this.value" type="button" name="" value="8" id=""></td>
-							<td><input onclick="display.value = display.value + this.value" type="button" name="" value="9" id=""></td>
-							<td><input onclick="display.value = '' " type="button" name="" value="C" id=""></td>
-							<td><input onclick="display.value = display.value + this.value" type="button" name="" value="(" id=""></td>
+							<td>
+								<input
+									onclick="display.value = display.value + this.value"
+									type="button"
+									name=""
+									value="7"
+									id="" />
+							</td>
+							<td>
+								<input
+									onclick="display.value = display.value + this.value"
+									type="button"
+									name=""
+									value="8"
+									id="" />
+							</td>
+							<td>
+								<input
+									onclick="display.value = display.value + this.value"
+									type="button"
+									name=""
+									value="9"
+									id="" />
+							</td>
+							<td>
+								<input
+									onclick="display.value = '' "
+									type="button"
+									name=""
+									value="C"
+									id="" />
+							</td>
+							<td>
+								<input
+									onclick="display.value = display.value + this.value"
+									type="button"
+									name=""
+									value="("
+									id="" />
+							</td>
 						</tr>
 						<tr>
-							<td><input onclick="display.value = display.value + this.value" type="button" name="" value="4" id=""></td>
-							<td><input onclick="display.value = display.value + this.value" type="button" name="" value="5" id=""></td>
-							<td><input onclick="display.value = display.value + this.value" type="button" name="" value="6" id=""></td>
-							<td><input onclick="display.value = display.value + this.value" type="button" name="" value="*" id=""></td>
-							<td><input onclick="display.value = display.value + this.value" type="button" name="" value=")" id=""></td>
+							<td>
+								<input
+									onclick="display.value = display.value + this.value"
+									type="button"
+									name=""
+									value="4"
+									id="" />
+							</td>
+							<td>
+								<input
+									onclick="display.value = display.value + this.value"
+									type="button"
+									name=""
+									value="5"
+									id="" />
+							</td>
+							<td>
+								<input
+									onclick="display.value = display.value + this.value"
+									type="button"
+									name=""
+									value="6"
+									id="" />
+							</td>
+							<td>
+								<input
+									onclick="display.value = display.value + this.value"
+									type="button"
+									name=""
+									value="*"
+									id="" />
+							</td>
+							<td>
+								<input
+									onclick="display.value = display.value + this.value"
+									type="button"
+									name=""
+									value=")"
+									id="" />
+							</td>
 						</tr>
 						<tr>
-							<td><input onclick="display.value = display.value + this.value" type="button" name="" value="1" id=""></td>
-							<td><input onclick="display.value = display.value + this.value" type="button" name="" value="2" id=""></td>
-							<td><input onclick="display.value = display.value + this.value" type="button" name="" value="3" id=""></td>
-							<td><input onclick="display.value = display.value + this.value" type="button" name="" value="-" id=""></td>
-							<td><input onclick="display.value = display.value + this.value" type="button" name="" value="%" id=""></td>
-
+							<td>
+								<input
+									onclick="display.value = display.value + this.value"
+									type="button"
+									name=""
+									value="1"
+									id="" />
+							</td>
+							<td>
+								<input
+									onclick="display.value = display.value + this.value"
+									type="button"
+									name=""
+									value="2"
+									id="" />
+							</td>
+							<td>
+								<input
+									onclick="display.value = display.value + this.value"
+									type="button"
+									name=""
+									value="3"
+									id="" />
+							</td>
+							<td>
+								<input
+									onclick="display.value = display.value + this.value"
+									type="button"
+									name=""
+									value="-"
+									id="" />
+							</td>
+							<td>
+								<input
+									onclick="display.value = display.value + this.value"
+									type="button"
+									name=""
+									value="%"
+									id="" />
+							</td>
 						</tr>
 						<tr>
-							<td><input onclick="display.value = display.value + this.value" type="button" name="" value="." id=""></td>
-							<td><input onclick="display.value = display.value + this.value" type="button" name="" value="0" id=""></td>
-							<td><input onclick="display.value = display.value + this.value" type="button" name="" value="+" id=""></td>
-							<td colspan="2" ><input onclick="display.value = eval(display.value)" type="button" name="" id="equal" value="=" id=""></td>
-
+							<td>
+								<input
+									onclick="display.value = display.value + this.value"
+									type="button"
+									name=""
+									value="."
+									id="" />
+							</td>
+							<td>
+								<input
+									onclick="display.value = display.value + this.value"
+									type="button"
+									name=""
+									value="0"
+									id="" />
+							</td>
+							<td>
+								<input
+									onclick="display.value = display.value + this.value"
+									type="button"
+									name=""
+									value="+"
+									id="" />
+							</td>
+							<td colspan="2">
+								<input
+									onclick="display.value = eval(display.value)"
+									type="button"
+									name=""
+									id="equal"
+									value="="
+									id="" />
+							</td>
 						</tr>
 					</table>
 				</div>
@@ -115,28 +257,28 @@
 		<script>
 			var form = document.getElementById('sheetdb-form');
 			var currentDate = document.querySelector('#currentDate');
-			let calcuId = document.querySelector('#calcuId')
-			let closeBtn = document.querySelector('#closeBtn')
-			let calculator = document.querySelector('#calculator')
-			let container = document.querySelector('#container')
-			let display = document.querySelector('#display')
-			let quantity = document.querySelector('#quantity')
+			let calcuId = document.querySelector('#calcuId');
+			let closeBtn = document.querySelector('#closeBtn');
+			let calculator = document.querySelector('#calculator');
+			let container = document.querySelector('#container');
+			let display = document.querySelector('#display');
+			let quantity = document.querySelector('#quantity');
 
 			window.addEventListener('load', () => {
 				let newDate = new Date();
 
 				let dateText =
-					(newDate.getDate() < 10
-						? '0' + newDate.getDate()
-						: newDate.getDate()) +
-					'-' +
 					(newDate.getMonth() < 10
 						? '0' + (newDate.getMonth() + 1)
 						: newDate.getMonth() + 1) +
 					'-' +
+					(newDate.getDate() < 10
+						? '0' + newDate.getDate()
+						: newDate.getDate()) +
+					'-' +
 					newDate.getFullYear();
 
-				let DayNight = newDate.getHours() > 12 ? 'PM' : 'AM';
+				let DayNight = newDate.getHours() >= 12 ? 'PM' : 'AM';
 
 				let hours =
 					newDate.getHours() > 12
