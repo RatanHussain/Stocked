@@ -278,25 +278,7 @@
 					'-' +
 					newDate.getFullYear();
 
-				let DayNight = newDate.getHours() >= 12 ? 'PM' : 'AM';
-
-				let hours =
-					newDate.getHours() > 12
-						? newDate.getHours() - 12
-						: newDate.getHours();
-
-				let timeText =
-					(hours < 10 ? '0' + hours : hours) +
-					':' +
-					(newDate.getMinutes() < 9
-						? '0' + newDate.getMinutes()
-						: newDate.getMinutes()) +
-					':' +
-					(newDate.getSeconds() < 10
-						? '0' + newDate.getSeconds()
-						: newDate.getSeconds());
-
-				currentDate.value = dateText + '   ' + timeText + ' ' + DayNight;
+				currentDate.value = dateText;
 			});
 
 			form.addEventListener('submit', (e) => {
