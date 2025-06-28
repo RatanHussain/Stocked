@@ -1,6 +1,6 @@
 <!-- @format -->
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -9,251 +9,41 @@
 		<script
 			src="https://kit.fontawesome.com/f0be14b3ea.js"
 			crossorigin="anonymous"></script>
-		<title>Stoke-Movement</title>
+		<title>Stock-Movement</title>
 	</head>
 	<body>
 		<div class="container" id="container">
-			<h2>Stock Management</h2>
+			<h2>RATAN INVENTORY</h2>
 			<form
-				action="https://sheetdb.io/api/v1/bpbi5lv5e3sr3"
+				action="https://sheetdb.io/api/v1/36qek0pf93bxm"
 				method="post"
 				id="sheetdb-form">
-				<div class="all status">
-					<label for="status">Movement</label>
-					<select name="data[Status]" id="status">
-						<option value="Returned Items">Returned Items</option>
-						<option value="Update for add stock">Update for add stock</option>
-						<option value="3pc Package">3pc Package</option>
-					</select>
-				</div>
-				<div class="all store">
-					<label for="store">Store</label>
-					<select name="data[Store]" id="store">
-						<option value="Sales Depmartment">Sales Depmartment</option>
-						<option value="Mr.Basser Stock">Mr.Basser Stock</option>
-					</select>
-				</div>
-				<div class="all items">
-					<label for="items">Items</label>
-					<select name="data[Items]" id="items">
-						<option value="Rashof103">Rashof</option>
-						<option value="Rashof104">Lavender</option>
-						<option value="RashofS106">Rashof Small</option>
-						<option value="RashofN107">Rashof Natural</option>
-						<option value="RashofF108">Rashof Flower</option>
-						<option value="RoyalGelly101">Royal Gelly</option>
-						<option value="Propolis101">Propolis</option>
-						<option value="Pollen101">Be-Pollen</option>
-						<option value="BLACKSEED101">Black Seed</option>
-						<option value="lafayett101">lafayett 101</option>
-						<option value="lafayett109">lafayett 109</option>
-						<option value="lafayett110">lafayett 110</option>
-						<option value="lafayett111">lafayett 111</option>
-						<option value="loud">loud</option>
-						<option value="PRFGREEN">Perfume-Green</option>
-						<option value="PRFLONDON">Perfume-London</option>
-						<option value="Argania">Argania</option>
-					</select>
+				<div class="headLine">
+					<div class="all quantity">
+						<label for="BIN">BIN</label>
+						<input
+							class="bin"
+							type="text"
+							name="data[BIN]"
+							id="display"
+							placeholder="Enter Bin here"
+							required />
+					</div>
+					<div>
+						<!-- <input type="submit" value="Sales" /> -->
+						<input class="btn" type="submit" value="Submit" />
+					</div>
 				</div>
 				<div class="all quantity">
-					<label for="quantity">Quantity</label>
-					<input
+					<label for="LPN">LPN</label>
+					<textarea
+						class="lpn"
 						type="text"
-						name="data[Quantity]"
+						name="data[LPN]"
 						id="display"
-						placeholder="Enter Quantity here"
-						required />
-				</div>
-				<div style="display: none" class="all quantity">
-					<label for="quantity">Date</label>
-					<input
-						type="datetime"
-						name="data[Date Time]"
-						id="currentDate"
-						placeholder="Enter Quantity here" />
-				</div>
-				<!-- <div style="display: none" class="all quantity">
-					<label for="quantity">Date</label>
-					<input
-						type="text"
-						name="data[Date Time]"
-						id="currentTime"
-						placeholder="Enter Quantity here" />
-				</div> -->
-
-				<div class="calculator" id="calculator">
-					<!-- <i class="fa-solid fa-circle-xmark closeIcon" id="closeBtn"></i> -->
-					<table class="table">
-						<!-- <tr>
-							<td colspan="5" ><input type="text" name=""  id="display"></td>
-						</tr> -->
-						<tr>
-							<td>
-								<input
-									onclick="display.value = display.value + this.value"
-									type="button"
-									name=""
-									value="7"
-									id="" />
-							</td>
-							<td>
-								<input
-									onclick="display.value = display.value + this.value"
-									type="button"
-									name=""
-									value="8"
-									id="" />
-							</td>
-							<td>
-								<input
-									onclick="display.value = display.value + this.value"
-									type="button"
-									name=""
-									value="9"
-									id="" />
-							</td>
-							<td>
-								<input
-									onclick="display.value = '' "
-									type="button"
-									name=""
-									value="C"
-									id="" />
-							</td>
-							<td>
-								<input
-									onclick="display.value = display.value + this.value"
-									type="button"
-									name=""
-									value="("
-									id="" />
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<input
-									onclick="display.value = display.value + this.value"
-									type="button"
-									name=""
-									value="4"
-									id="" />
-							</td>
-							<td>
-								<input
-									onclick="display.value = display.value + this.value"
-									type="button"
-									name=""
-									value="5"
-									id="" />
-							</td>
-							<td>
-								<input
-									onclick="display.value = display.value + this.value"
-									type="button"
-									name=""
-									value="6"
-									id="" />
-							</td>
-							<td>
-								<input
-									onclick="display.value = display.value + this.value"
-									type="button"
-									name=""
-									value="*"
-									id="" />
-							</td>
-							<td>
-								<input
-									onclick="display.value = display.value + this.value"
-									type="button"
-									name=""
-									value=")"
-									id="" />
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<input
-									onclick="display.value = display.value + this.value"
-									type="button"
-									name=""
-									value="1"
-									id="" />
-							</td>
-							<td>
-								<input
-									onclick="display.value = display.value + this.value"
-									type="button"
-									name=""
-									value="2"
-									id="" />
-							</td>
-							<td>
-								<input
-									onclick="display.value = display.value + this.value"
-									type="button"
-									name=""
-									value="3"
-									id="" />
-							</td>
-							<td>
-								<input
-									onclick="display.value = display.value + this.value"
-									type="button"
-									name=""
-									value="-"
-									id="" />
-							</td>
-							<td>
-								<input
-									onclick="display.value = display.value + this.value"
-									type="button"
-									name=""
-									value="%"
-									id="" />
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<input
-									onclick="display.value = display.value + this.value"
-									type="button"
-									name=""
-									value="."
-									id="" />
-							</td>
-							<td>
-								<input
-									onclick="display.value = display.value + this.value"
-									type="button"
-									name=""
-									value="0"
-									id="" />
-							</td>
-							<td>
-								<input
-									onclick="display.value = display.value + this.value"
-									type="button"
-									name=""
-									value="+"
-									id="" />
-							</td>
-							<td colspan="2">
-								<input
-									onclick="display.value = eval(display.value)"
-									type="button"
-									name=""
-									id="equal"
-									value="="
-									id="" />
-							</td>
-						</tr>
-					</table>
-				</div>
-
-				<div class="btn">
-					<!-- <input type="submit" value="Sales" /> -->
-					<input type="submit" value="Submit" />
+						placeholder="Enter LPN's here"
+						required
+						rows="30"></textarea>
 				</div>
 			</form>
 			<p>Design by Ratan</p>
@@ -269,33 +59,34 @@
 			let display = document.querySelector('#display');
 			let quantity = document.querySelector('#quantity');
 
-			window.addEventListener('load', () => {
-				let newDate = new Date();
-
-				let dateText =
-					(newDate.getMonth() < 10
-						? '0' + (newDate.getMonth() + 1)
-						: newDate.getMonth() + 1) +
-					'-' +
-					(newDate.getDate() < 10
-						? '0' + newDate.getDate()
-						: newDate.getDate()) +
-					'-' +
-					newDate.getFullYear();
-
-				currentDate.value = dateText;
-			});
-
 			form.addEventListener('submit', (e) => {
 				e.preventDefault();
-				fetch(form.action, {
-					method: 'POST',
-					body: new FormData(document.getElementById('sheetdb-form')),
-				})
-					.then((response) => response.json())
-					.then((html) => {
-						// you can put any JS code here
-						location.reload();
+
+				const binValue = document.querySelector('.bin').value;
+				const lpnValue = document.querySelector('.lpn').value;
+
+				// Split textarea lines by new line
+				const lpnLines = lpnValue
+					.split('\n')
+					.filter((line) => line.trim() !== '');
+
+				const requests = lpnLines.map((line) => {
+					const formData = new FormData();
+					formData.append('data[BIN]', binValue);
+					formData.append('data[LPN]', line.trim());
+					return fetch(form.action, {
+						method: 'POST',
+						body: formData,
+					});
+				});
+
+				Promise.all(requests)
+					.then(() => {
+						alert('Submitted all entries!');
+						form.reset();
+					})
+					.catch((error) => {
+						alert('Error submitting entries: ' + error.message);
 					});
 			});
 		</script>
