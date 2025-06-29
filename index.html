@@ -1,94 +1,112 @@
-<!-- @format -->
-
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="style.css" />
-		<script
-			src="https://kit.fontawesome.com/f0be14b3ea.js"
-			crossorigin="anonymous"></script>
-		<title>Stock-Movement</title>
-	</head>
-	<body>
-		<div class="container" id="container">
-			<h2>RATAN INVENTORY</h2>
-			<form
-				action="https://sheetdb.io/api/v1/36qek0pf93bxm"
-				method="post"
-				id="sheetdb-form">
-				<div class="headLine">
-					<div class="all quantity">
-						<label for="BIN">BIN</label>
-						<input
-							class="bin"
-							type="text"
-							name="data[BIN]"
-							id="display"
-							placeholder="Enter Bin here"
-							required />
-					</div>
-					<div>
-						<!-- <input type="submit" value="Sales" /> -->
-						<input class="btn" type="submit" value="Submit" />
-					</div>
-				</div>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Stock-Movement</title>
+	<link rel="stylesheet" href="style.css" />
+	<script src="https://kit.fontawesome.com/f0be14b3ea.js" crossorigin="anonymous"></script>
+	<style>
+		#submit-status {
+			display: none;
+			margin-top: 10px;
+			color: green;
+			font-weight: bold;
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			animation: blink 1s linear infinite;
+		}
+		@keyframes blink {
+			50% { opacity: 0.5; }
+		}
+		.spinner {
+			width: 16px;
+			height: 16px;
+			border: 2px solid #ccc;
+			border-top: 2px solid green;
+			border-radius: 50%;
+			animation: spin 0.8s linear infinite;
+		}
+		@keyframes spin {
+			100% { transform: rotate(360deg); }
+		}
+		.btn:disabled {
+			background-color: #999;
+			cursor: not-allowed;
+		}
+	</style>
+</head>
+<body>
+	<div class="container" id="container">
+		<h2>RATAN INVENTORY</h2>
+		<form
+			action="https://script.google.com/macros/s/AKfycbxORSmWVu8qBeEGRnw0THcK86v8JSX_HKfCPsSYTU_1sGX37mnDzGw_xagGa8fje5irhw/exec"
+			method="post"
+			id="sheet-form">
+
+			<div class="headLine">
 				<div class="all quantity">
-					<label for="LPN">LPN</label>
-					<textarea
-						class="lpn"
+					<label for="BIN">BIN</label>
+					<input
+						class="bin"
 						type="text"
-						name="data[LPN]"
-						id="display"
-						placeholder="Enter LPN's here"
-						required
-						rows="30"></textarea>
+						name="BIN"
+						placeholder="Enter Bin here"
+						required />
 				</div>
-			</form>
-			<p>Design by Ratan</p>
-		</div>
+				<div>
+					<input class="btn" id="submitBtn" type="submit" value="Submit" />
+				</div>
+			</div>
 
-		<script>
-			var form = document.getElementById('sheetdb-form');
-			var currentDate = document.querySelector('#currentDate');
-			let calcuId = document.querySelector('#calcuId');
-			let closeBtn = document.querySelector('#closeBtn');
-			let calculator = document.querySelector('#calculator');
-			let container = document.querySelector('#container');
-			let display = document.querySelector('#display');
-			let quantity = document.querySelector('#quantity');
+			<div class="all quantity">
+				<label for="LPN">LPN</label>
+				<textarea
+					class="lpn"
+					name="LPN"
+					placeholder="Enter LPNs here (one per line)"
+					required
+					rows="30"></textarea>
+			</div>
 
-			form.addEventListener('submit', (e) => {
-				e.preventDefault();
+			<div id="submit-status">
+				<div class="spinner"></div>
+				<span>Submitting...</span>
+			</div>
+		</form>
+		<p>Design by Ratan</p>
+	</div>
 
-				const binValue = document.querySelector('.bin').value;
-				const lpnValue = document.querySelector('.lpn').value;
+	<script>
+		const form = document.getElementById('sheet-form');
+		const status = document.getElementById('submit-status');
+		const submitBtn = document.getElementById('submitBtn');
 
-				// Split textarea lines by new line
-				const lpnLines = lpnValue
-					.split('\n')
-					.filter((line) => line.trim() !== '');
+		form.addEventListener('submit', function (e) {
+			e.preventDefault();
 
-				const requests = lpnLines.map((line) => {
-					const formData = new FormData();
-					formData.append('data[BIN]', binValue);
-					formData.append('data[LPN]', line.trim());
-					return fetch(form.action, {
-						method: 'POST',
-						body: formData,
-					});
+			status.style.display = 'flex';
+			submitBtn.disabled = true;
+
+			const formData = new FormData(form);
+			fetch(form.action, {
+				method: 'POST',
+				body: formData,
+			})
+				.then(response => response.text())
+				.then(result => {
+					alert('Submission successful!');
+					form.reset();
+				})
+				.catch(error => {
+					alert('Submission failed: ' + error.message);
+				})
+				.finally(() => {
+					status.style.display = 'none';
+					submitBtn.disabled = false;
 				});
-
-				Promise.all(requests)
-					.then(() => {
-						alert('Submitted all entries!');
-						form.reset();
-					})
-					.catch((error) => {
-						alert('Error submitting entries: ' + error.message);
-					});
-			});
-		</script>
-	</body>
+		});
+	</script>
+</body>
 </html>
